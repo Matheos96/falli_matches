@@ -70,14 +70,14 @@ if __name__ == '__main__':
             to_log = []
 
             # Find new entries
-            news = merged.loc[lambda x : x['_merge']=='right_only']
+            news = merged.loc[lambda x : x['_merge']=='left_only']
             new_game_rows = get_game_rows(news)
             if len(new_game_rows) > 0:
                 to_log.append('New games since last run:\n')
                 to_log.extend(new_game_rows)
 
             # Find removed entries
-            removed = merged.loc[lambda x : x['_merge']=='left_only']
+            removed = merged.loc[lambda x : x['_merge']=='right_only']
             removed_game_rows = get_game_rows(removed)
             if len(removed_game_rows) > 0:
                 to_log.append('\nRemoved games since last run:\n')
