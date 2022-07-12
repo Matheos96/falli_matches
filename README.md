@@ -1,5 +1,5 @@
 # Falli Matches - A Tulospalvelu web scraper
-_Requires Python 3.5 or higher_
+_Requires Python >= 3.6_
 
 ## Setup
 1. Install the requirements
@@ -18,4 +18,4 @@ cookie = 'TASO_palloliitto=...morejibberish...'
 ```console
 $ python falli_matches.py
 ```
-The script will print the results to the console as well as write a log to the file ```Falli_matches_log.txt``` which is appended to on each run.
+The script will print the results to the console as well as write a log to the file ```Falli_matches_log.txt``` which is prepended to after each run.
