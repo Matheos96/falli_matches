@@ -16,14 +16,16 @@ def print_rows(rows: list[str]) -> None:
 
 # Writes a list of rows to the top of the log file
 def write_rows_to_log(rows: list[str]) -> None:
-    with open(setup.log_file, 'r') as file:
-        old_content = file.read()
+    old_content = None
+    if exists(setup.log_file):
+        with open(setup.log_file, 'r') as file:
+            old_content = file.read()
     with open(setup.log_file, 'w') as file:
         file.write(f'---------------------------- FROM SESSION: {datetime.datetime.now()} ----------------------------\n')
         file.writelines(rows)
         file.write('\n')
-    with open(setup.log_file, 'a') as file:
-        file.write(old_content)
+        if old_content:
+            file.write(old_content)
 
 def main() -> None:
     # Fetch Json data
