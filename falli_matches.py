@@ -36,6 +36,10 @@ def main() -> None:
     # If we got data to work with
     if json_result and 'matches' in json_result:
         df = json_normalize(json_result['matches'])  # Put the matches Json array into a pandas dataframe
+        if df.empty:
+            print('No matches found! \nExiting... (Old cache unmodified. You may want to manually delete the prev.pkl file)')
+            return
+            
         df = df[['date', 'time', 'category_name', 'venue_name', 'team_A_name', 'team_B_name']]  # Only pick interesting columns
 
         session_log = []

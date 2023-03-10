@@ -1,6 +1,6 @@
 from cookie import cookie  # Import cookie from cookie.py. This file needs to be manually created by the user (see README.md) 
 
-start_date = '2022-07-08'
+start_date = '2023-05-01'
 url = 'https://spl.torneopal.net/taso/rest/getMatches'
 querystring = {'start_date':start_date,'venue_location_id':'2397','tpid':'1667178516'}
 headers = {
